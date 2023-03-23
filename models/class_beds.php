@@ -1,9 +1,10 @@
 <?php
 
-
 require_once __DIR__ . "/class_category.php";
+require_once __DIR__ . "../../db/db_beds.php";
+require_once __DIR__ . "/class_product.php";
 
-class Bed extends Product
+class Beds extends Product
 {
     public $size;
 

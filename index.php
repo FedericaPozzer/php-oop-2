@@ -6,6 +6,9 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
 <?php
 require_once __DIR__ . "/db/db_food.php";
+require_once __DIR__ . "/db/db_toys.php";
+require_once __DIR__ . "/db/db_beds.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +27,11 @@ require_once __DIR__ . "/db/db_food.php";
 
 <body>
     <div class="container">
-        <h3 class="text-center mt-3">I NOSTRI PRODOTTI</h3>
+        <h1 class="text-center mt-3">I NOSTRI PRODOTTI</h1>
 
         <div class="row row-cols-6 mt-3">
+
+            <!-- echo $f->category->categoryName -->
 
             <?php foreach ($food as $f) : ?>
                 <div class="col card-group">
@@ -34,7 +39,7 @@ require_once __DIR__ . "/db/db_food.php";
                         <img src=" <?php echo $f->image ?> " class="card-img-top" alt="Immagine Prodotto">
                         <div class="card-body text-center">
                             <h5 class="card-title"> <?php echo $f->name ?> </h5>
-                            <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria <?php ?> </p>
+                            <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria: <?php ?> </p>
                             <p class="card-text">prezzo <?php echo $f->price ?> €</p>
                             <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
                         </div>
@@ -45,35 +50,39 @@ require_once __DIR__ . "/db/db_food.php";
         </div>
 
         <div class="row row-cols-6 mt-3">
-            <div class="col">
 
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="Immagine Prodotto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nome Prodotto <?php ?> </h5>
-                        <p class="card-text">tipo di articolo <?php ?> - cateogria <?php ?> </p>
-                        <p class="card-text">prezzo <?php ?> €</p>
-                        <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
+            <?php foreach ($toys as $toy) : ?>
+                <div class="col card-group">
+                    <div class="card">
+                        <img src=" <?php echo $toy->image ?> " class="card-img-top" alt="Immagine Prodotto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <?php echo $toy->name ?> </h5>
+                            <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria: <?php ?> </p>
+                            <p class="card-text">prezzo <?php echo $toy->price ?> €</p>
+                            <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
+                        </div>
                     </div>
                 </div>
+            <?php endforeach; ?>
 
-            </div>
         </div>
 
         <div class="row row-cols-6 mt-3">
-            <div class="col">
 
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="Immagine Prodotto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nome Prodotto <?php ?> </h5>
-                        <p class="card-text">tipo di articolo <?php ?> - cateogria <?php ?> </p>
-                        <p class="card-text">prezzo <?php ?> €</p>
-                        <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
+            <?php foreach ($beds as $bed) : ?>
+                <div class="col card-group">
+                    <div class="card">
+                        <img src=" <?php echo $bed->image ?> " class="card-img-top" alt="Immagine Prodotto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <?php echo $bed->name ?> </h5>
+                            <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria: <?php ?> </p>
+                            <p class="card-text">prezzo <?php echo $bed->price ?> €</p>
+                            <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
+                        </div>
                     </div>
                 </div>
+            <?php endforeach; ?>
 
-            </div>
         </div>
 
     </div>
