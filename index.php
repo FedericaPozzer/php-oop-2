@@ -4,6 +4,9 @@ I prodotti sono categorizzati, le **categorie** sono Cani o Gatti.
 I prodotti saranno oltre al **cibo**, anche **giochi**, **cucce**, etc.
 Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
 
+<?php
+require_once __DIR__ . "/db/db_food.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,21 +24,58 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
 <body>
     <div class="container">
-        <div class="row mt-5">
+        <h3 class="text-center mt-3">I NOSTRI PRODOTTI</h3>
+
+        <div class="row row-cols-6 mt-3">
+
+            <?php foreach ($food as $f) : ?>
+                <div class="col card-group">
+                    <div class="card">
+                        <img src=" <?php echo $f->image ?> " class="card-img-top" alt="Immagine Prodotto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <?php echo $f->name ?> </h5>
+                            <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria <?php ?> </p>
+                            <p class="card-text">prezzo <?php echo $f->price ?> €</p>
+                            <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+        </div>
+
+        <div class="row row-cols-6 mt-3">
             <div class="col">
 
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img src="..." class="card-img-top" alt="Immagine Prodotto">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Nome Prodotto</h5>
-                        <p class="card-text">tipo di articolo - cateogria</p>
-                        <p class="card-text">prezzo</p>
-                        <a href="#" class="btn btn-warning">Aggiungi al carrello</a>
+                        <h5 class="card-title">Nome Prodotto <?php ?> </h5>
+                        <p class="card-text">tipo di articolo <?php ?> - cateogria <?php ?> </p>
+                        <p class="card-text">prezzo <?php ?> €</p>
+                        <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
                     </div>
                 </div>
 
             </div>
         </div>
+
+        <div class="row row-cols-6 mt-3">
+            <div class="col">
+
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="Immagine Prodotto">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nome Prodotto <?php ?> </h5>
+                        <p class="card-text">tipo di articolo <?php ?> - cateogria <?php ?> </p>
+                        <p class="card-text">prezzo <?php ?> €</p>
+                        <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </body>
 

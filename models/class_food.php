@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . "/class_category.php";
+require_once __DIR__ . "../../db/db_food.php";
+require_once __DIR__ . "/class_product.php";
 
 class Food extends Product
 {

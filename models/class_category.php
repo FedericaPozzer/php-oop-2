@@ -4,7 +4,7 @@ class Category
 {
     public $categoryName;
 
-    public function __construct(string $_categoryName) {
+    public function __construct($_categoryName) {
         $this->categoryName = $_categoryName;
     }
 }
