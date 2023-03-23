@@ -1,5 +1,8 @@
 <?php
 
+
+require_once __DIR__ . "/class_category.php";
+
 class Bed extends Product
 {
     public $size;

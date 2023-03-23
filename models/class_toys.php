@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/class_category.php";
+
 class Toy extends Product
 {
     public $material;

@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/class_category.php";
+require_once __DIR__ . "/class_food.php";
 
 class Product {
     public $name;
@@ -20,3 +21,5 @@ class Product {
         $this->category = $category;
     }
 }
+
+$ciao = new Food("Crocchette ABC", "img", "19,99", "Dog", "12/03/2026");

@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/class_category.php";
+
 class Food extends Product
 {
     public $expireDate;
@@ -11,3 +13,4 @@ class Food extends Product
         $this->expireDate = $_expireDate;
     }
 }
+
