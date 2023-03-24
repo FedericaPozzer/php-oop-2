@@ -6,8 +6,8 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
 <?php
 require_once __DIR__ . "/db/db_food.php";
-require_once __DIR__ . "/db/db_toys.php";
-require_once __DIR__ . "/db/db_beds.php";
+require_once __DIR__ . "/db/db_toy.php";
+require_once __DIR__ . "/db/db_bed.php";
 
 ?>
 
@@ -25,11 +25,11 @@ require_once __DIR__ . "/db/db_beds.php";
 
 </head>
 
-<body>
+<body class="bg-success p-2 bg-opacity-25">
     <div class="container">
-        <h1 class="text-center mt-3">I NOSTRI PRODOTTI</h1>
+        <h1 class="text-center mt-4">I NOSTRI PRODOTTI</h1>
 
-        <div class="row row-cols-6 mt-2">
+        <div class="row row-cols-6 mt-4">
 
             <!-- echo $f->category->categoryName -->
 
@@ -39,8 +39,9 @@ require_once __DIR__ . "/db/db_beds.php";
                         <img src=" <?php echo $f->image ?> " class="card-img-top" alt="Immagine Prodotto">
                         <div class="card-body text-center">
                             <h5 class="card-title"> <?php echo $f->name ?> </h5>
-                            <!-- <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria: <?php ?> </p> -->
+                            <!-- <p class="card-text"> Tipo di articolo: <?php ?> - cateogria: <?php ?> </p> -->
                             <p class="card-text">prezzo <?php echo $f->price ?> €</p>
+                            <p>Data di scadenza: <?php echo $f->expireDate ?> </p>
                             <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
                         </div>
                     </div>
@@ -49,7 +50,7 @@ require_once __DIR__ . "/db/db_beds.php";
 
         </div>
 
-        <div class="row row-cols-6 mt-2">
+        <div class="row row-cols-6 mt-4">
 
             <?php foreach ($toys as $toy) : ?>
                 <div class="col card-group">
@@ -59,6 +60,7 @@ require_once __DIR__ . "/db/db_beds.php";
                             <h5 class="card-title"> <?php echo $toy->name ?> </h5>
                             <!-- <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria: <?php ?> </p> -->
                             <p class="card-text">prezzo <?php echo $toy->price ?> €</p>
+                            <p>Materiale: <?php echo $toy->material ?> </p>
                             <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
                         </div>
                     </div>
@@ -67,7 +69,7 @@ require_once __DIR__ . "/db/db_beds.php";
 
         </div>
 
-        <div class="row row-cols-6 mt-2">
+        <div class="row row-cols-6 mt-4">
 
             <?php foreach ($beds as $bed) : ?>
                 <div class="col card-group">
@@ -77,6 +79,7 @@ require_once __DIR__ . "/db/db_beds.php";
                             <h5 class="card-title"> <?php echo $bed->name ?> </h5>
                             <!-- <p class="card-text"> Tipo di articolo: <?php  ?> - cateogria: <?php ?> </p> -->
                             <p class="card-text">prezzo <?php echo $bed->price ?> €</p>
+                            <p>Taglia: <?php echo $bed->size ?> </p>
                             <a href="#" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Acquista</a>
                         </div>
                     </div>
