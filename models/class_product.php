@@ -12,12 +12,7 @@ class Product {
         $this->setName($_name);
         $this->image = $_image;
         $this->price = $_price;
-        $this->setCategory($_category);
-    }
-
-    public function setCategory($category) {
-        if (($category != "Dog") || ($category != "Cat")) return false;
-        $this->category = $category;
+        $this->category = ($_category);
     }
 
     public function setName($name) {

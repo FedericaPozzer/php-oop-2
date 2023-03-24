@@ -14,5 +14,10 @@ class Food extends Product
        
         $this->expireDate = $_expireDate;
     }
+
+    public function className() {
+        return "cibo";
+    }
 }
+
 

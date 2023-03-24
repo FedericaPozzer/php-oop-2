@@ -14,4 +14,9 @@ class Toy extends Product
 
         $this->material = $_material;
     }
+
+    public function className()
+    {
+        return "giochi";
+    }
 }

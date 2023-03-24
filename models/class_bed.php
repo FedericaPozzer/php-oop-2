@@ -14,4 +14,9 @@ class Bed extends Product
 
         $this->size = $_size;
     }
+
+    public function className()
+    {
+        return "cucce";
+    }
 }
